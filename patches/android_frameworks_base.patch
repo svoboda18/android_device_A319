@@ -1,0 +1,88 @@
+From f488e73caae9f58d609ee9c1a3dc41eefa33e851 Mon Sep 17 00:00:00 2001
+From: fire855 <thefire855@gmail.com>
+Date: Sun, 17 Apr 2016 13:39:34 +0200
+Subject: [PATCH] Add prepareWithoutScan (for FMRadio)
+
+Change-Id: I81fb9ec96597f07310ca89af84ca85d647eecee0
+---
+ api/current.txt                           | 1 +
+ api/system-current.txt                    | 1 +
+ media/java/android/media/MediaPlayer.java | 3 +++
+ 3 files changed, 5 insertions(+)
+
+diff --git a/api/current.txt b/api/current.txt
+index 8655d899580..941cd218833 100644
+--- a/api/current.txt
++++ b/api/current.txt
+@@ -21192,6 +21192,7 @@ package android.media {
+     method public boolean isPlaying();
+     method public void pause() throws java.lang.IllegalStateException;
+     method public void prepare() throws java.io.IOException, java.lang.IllegalStateException;
++    method public void prepareWithoutScan() throws java.io.IOException, java.lang.IllegalStateException;
+     method public void prepareAsync() throws java.lang.IllegalStateException;
+     method public void release();
+     method public void reset();
+diff --git a/api/system-current.txt b/api/system-current.txt
+index 0fe164a269c..920214f081b 100644
+--- a/api/system-current.txt
++++ b/api/system-current.txt
+@@ -22721,6 +22721,7 @@ package android.media {
+     method public boolean isPlaying();
+     method public void pause() throws java.lang.IllegalStateException;
+     method public void prepare() throws java.io.IOException, java.lang.IllegalStateException;
++    method public void prepareWithoutScan() throws java.io.IOException, java.lang.IllegalStateException;
+     method public void prepareAsync() throws java.lang.IllegalStateException;
+     method public void release();
+     method public void reset();
+diff --git a/media/java/android/media/MediaPlayer.java b/media/java/android/media/MediaPlayer.java
+index e5f7527c9db..fdc18934914 100644
+--- a/media/java/android/media/MediaPlayer.java
++++ b/media/java/android/media/MediaPlayer.java
+@@ -1184,6 +1184,9 @@ public void prepare() throws IOException, IllegalStateException {
+         _prepare();
+         scanInternalSubtitleTracks();
+     }
++    public void prepareWithoutScan() throws IOException, IllegalStateException {
++        _prepare();
++    }
+ 
+     private native void _prepare() throws IOException, IllegalStateException;
+ 
+From 8b6db19e13ada2f72ab66b8854a1314ca5b4d940 Mon Sep 17 00:00:00 2001
+From: Meticulus <theonejohnnyd@gmail.com>
+Date: Sun, 11 Sep 2016 06:36:28 -0500
+Subject: [PATCH] Fix Incall UI crash
+
+Change-Id: I3fa70da9ee597b5001963ab87086339bbb511441
+---
+ libs/hwui/LayerRenderer.cpp | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+
+diff --git a/libs/hwui/LayerRenderer.cpp b/libs/hwui/LayerRenderer.cpp
+index 137316f5772..6cc0529e505 100644
+--- a/libs/hwui/LayerRenderer.cpp
++++ b/libs/hwui/LayerRenderer.cpp
+@@ -194,7 +194,13 @@ Layer* LayerRenderer::createRenderLayer(RenderState& renderState, uint32_t width
+         ALOGW("Could not obtain an FBO");
+         return nullptr;
+     }
+-
++#ifdef MTK_HARDWARE
++    if (width == 0 && height == 0) {
++        ALOGW("Trying to obtain a zero-size layer, setting fall-back size 512x768");
++        width = 512;
++        height = 768;
++    }
++#endif
+     caches.textureState().activateTexture(0);
+     Layer* layer = caches.layerCache.get(renderState, width, height);
+     if (!layer) {
+@@ -327,7 +333,7 @@ void LayerRenderer::destroyLayer(Layer* layer) {
+ }
+ 
+ void LayerRenderer::flushLayer(RenderState& renderState, Layer* layer) {
+-#ifdef GL_EXT_discard_framebuffer
++#if 0
+     if (!layer) return;
+ 
+     GLuint fbo = layer->getFbo();
