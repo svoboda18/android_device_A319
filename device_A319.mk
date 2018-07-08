@@ -32,13 +32,15 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio_policy.default \
     audio.a2dp.default \
     audio.usb.default \
     audio.r_submix.default \
     libaudio-resampler \
-    audio.primary.mt6582 \
     tinymix
+
+PRODUCT_PACKAGES += \
+    audio_policy.default\
+    audio.primary.mt6572
 
 PRODUCT_PACKAGES += \
     lib_driver_cmd_mt66xx
