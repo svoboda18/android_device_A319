@@ -29,5 +29,16 @@
  patch -p1 < ../../../device/Lenovo/A319/patches/android_packages_apps_FMRadio.patch
 
  cd ../../../
-
- echo Successfuly patched!
+ 
+ cd vendor*/code*/telepho*
+ cd ims/src/org/codeaurora/ims/utils/
+ cp QtiImsExtUtils.java ../../../../../../../../../device/Lenovo/A319/backup/QtiImsExtUtils.java
+ sudo rm -rf QtiImsExtUtils.java
+ cp ../../../../../../../../../device/Lenovo/A319/patches/QtiImsExtUtils.java QtiImsExtUtils.java
+ cd ../../../../../../../../../
+ cd system/sepolicy
+ cp mediaserver.te ../../device/Lenovo/A319/backup/mediaserver.te
+ sudo rm -rf mediaserver.te
+ cp ../../device/Lenovo/A319/patches/mediaserver.te mediaserver.te
+ echo "Patch Success!"
+ echo "IF Any Build Error, Restore the backups in repo/device/Lenovo/A319/backup"
