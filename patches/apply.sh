@@ -14,11 +14,15 @@
  patch -p1 < ../../device/Lenovo/A319/patches/android_external_icu.patch
 
  cd ../../frameworks/av
- #patch -p1 < ../../device/Lenovo/A319/patches/android_frameworks_av.patch
+ patch -p1 < ../../device/Lenovo/A319/patches/android_frameworks_av.patch
 
  cd ..
- cd base
- #patch -p1 < ../../device/Lenovo/A319/patches/android_frameworks_base.patch
+ cd base/api
+ mkdir ../../../device/Lenovo/A319/backup
+ cp current.txt ../../../device/Lenovo/A319/backup/current.txt
+ cp system-current.txt ../../../device/Lenovo/A319/backup/system-current.txt
+ cd ..
+ patch -p1 < ../../device/Lenovo/A319/patches/android_frameworks_base.patch
 
  cd ../..
  cd packages/apps/FMRadio
