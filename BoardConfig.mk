@@ -25,8 +25,8 @@ TARGET_CPU_MEMCPY_OPT_DISABLE := true
 WITH_DEXPREOPT := false
 DONT_DEXPREOPT_PREBUILTS := true
 
-# Link against libxlog
-TARGET_LDPRELOAD := libxlog.so:libmtk_symbols.so
+# Link libmtk_symbols.so
+TARGET_LDPRELOAD := ibmtk_symbols.so
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MT6572

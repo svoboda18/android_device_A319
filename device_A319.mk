@@ -33,12 +33,11 @@ PRODUCT_PACKAGES += \
     Torch
 
 PRODUCT_PACKAGES += \
-    libmtk_symbols \
-    libxlog
+    libmtk_symbols
 
-# Lights
+# Memtrack
 PRODUCT_PACKAGES += \
-    lights.mt6572
+   memtrack.mt6572
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -52,18 +51,22 @@ PRODUCT_PACKAGES += \
     audio_policy.default\
     audio.primary.mt6572
 
+# Wifi
 PRODUCT_PACKAGES += \
     lib_driver_cmd_mt66xx
-
+    libwpa_client \
+    hostapd \
+    wpa_supplicant \
+    wpa_supplicant.conf
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
     
-# Bluetooth
-PRODUCT_PACKAGES += \
-    libbt-vendor
-
 # GSM
 PRODUCT_PACKAGES += libmt6572
+
+# Bluetooth
+PRODUCT_PACKAGES += \
+   libbt-vendor
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=MediaTekRIL
@@ -141,6 +144,11 @@ PRODUCT_PACKAGES += \
 # FM Radio
 PRODUCT_PACKAGES += \
     FMRadio
+    libfmjni
+    
+# Substratum
+PRODUCT_PACKAGES += \
+    ThemeInterfacer
 
 # GPS
 PRODUCT_COPY_FILES += \
