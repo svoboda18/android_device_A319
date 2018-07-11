@@ -53,11 +53,12 @@ PRODUCT_PACKAGES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-    lib_driver_cmd_mt66xx
+    lib_driver_cmd_mt66xx \
     libwpa_client \
     hostapd \
     wpa_supplicant \
     wpa_supplicant.conf
+    
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
     
