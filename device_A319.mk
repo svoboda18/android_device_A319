@@ -1,5 +1,15 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0 \
+ro.allow.mock.location=1 \
+ro.debuggable=1 \
+ro.adb.secure=0 \
+persist.sys.usb.config=mtp \
+persist.service.adb.enable=1 \
+persist.service.debuggable=1 \
+ro.mount.fs=EXT4 
+
+
 # The gps config appropriate for this device
 $(call inherit-product-if-exists, device/common/gps/gps_us_supl.mk)
 
@@ -130,8 +140,7 @@ PRODUCT_PACKAGES += \
 
 # FM Radio
 PRODUCT_PACKAGES += \
-    FMRadio \
-    libfmjni
+    FMRadio
 
 # GPS
 PRODUCT_COPY_FILES += \
