@@ -1,3 +1,9 @@
+# Device path
+DEVICE_PATH := device/Lenovo/A319
+
+# Vendor path
+VENDOR_PATH := vendor/Lenovo/A319
+
 # Release name
 PRODUCT_RELEASE_NAME := A319
 
