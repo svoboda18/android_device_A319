@@ -103,7 +103,7 @@ int mtk_open(void **param) {
   int fd, idx;
   fd = mtk_bt_enable(0, NULL);
   if (fd < 0) {
-    ALOGE("Can't open mtk fd");
+    ALOGE(" Can't open mtk fd");
     return -1;
   }
   for (idx = 0; idx < CH_MAX; idx++)

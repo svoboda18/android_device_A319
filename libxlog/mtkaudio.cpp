@@ -1,22 +1,6 @@
-/*
- *
- * Copyright 2008, The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
-*/
-
+#include <MtpTypes.h>
 #include <system/audio.h>
-#include <utils/StrongPointer.h>
+#include <StrongPointer.h>
 #include <media/IAudioFlinger.h>
 #include <hardware/audio.h>
 #include <stdlib.h>
@@ -50,7 +34,7 @@ int AudioSystem::GetVoiceUnlockDLLatency()
   return 0;
 }
 
-int AudioSystem::SetVoiceUnlockSRC(uint outSR __unused, uint outChannel __unused)
+int AudioSystem::SetVoiceUnlockSRC(uint outSR, uint outChannel)
 {
   return 0;
 }
@@ -65,16 +49,12 @@ bool AudioSystem::startVoiceUnlockDL()
   return 0;
 }
 
-int AudioSystem::ReadRefFromRing(
-        void *buf __unused,
-        uint32_t datasz __unused,
-        void* DLtime __unused
-        )
+int AudioSystem::ReadRefFromRing(void*buf, uint32_t datasz,void* DLtime)
 {
   return 0;
 }
 
-int AudioSystem::GetVoiceUnlockULTime(void* DLtime __unused)
+int AudioSystem::GetVoiceUnlockULTime(void* DLtime)
 {
   return 0;
 }
@@ -108,15 +88,15 @@ public:
     {
         return 0;
     }
-    virtual int ATVCS_matv_ps_init(int on __unused)
+    virtual int ATVCS_matv_ps_init(int on)
     {
         return 0;
     }
-    virtual int ATVCS_matv_set_parameterb(int in __unused)
+    virtual int ATVCS_matv_set_parameterb(int in)
     {
         return 0;
     }
-    virtual int ATVCS_matv_suspend(int on __unused)
+    virtual int ATVCS_matv_suspend(int on)
     {
         return 0;
     }
@@ -124,17 +104,17 @@ public:
     {
         return 0;
     }
-    virtual void ATVCS_matv_chscan(int mode __unused)
+    virtual void ATVCS_matv_chscan(int mode)
     {
     }
     virtual void ATVCS_matv_chscan_stop()
     {
     }
-    virtual int ATVCS_matv_get_chtable(int ch __unused, void *entry __unused, int len __unused)
+    virtual int ATVCS_matv_get_chtable(int ch, void *entry, int len)
     {
         return 0;
     }
-    virtual int ATVCS_matv_set_chtable(int ch __unused, void *entry __unused, int len __unused)
+    virtual int ATVCS_matv_set_chtable(int ch, void *entry, int len)
     {
         return 0;
     }
@@ -142,13 +122,13 @@ public:
     {
         return 0;
     }
-    virtual void ATVCS_matv_change_channel(int ch __unused)
+    virtual void ATVCS_matv_change_channel(int ch)
     {
     }
-    virtual void ATVCS_matv_set_country(int country __unused)
+    virtual void ATVCS_matv_set_country(int country)
     {
     }
-    virtual void ATVCS_matv_set_tparam(int mode __unused)
+    virtual void ATVCS_matv_set_tparam(int mode)
     {
     }
     virtual void ATVCS_matv_audio_play()
@@ -161,38 +141,38 @@ public:
     {
         return 0;
     }
-    virtual void ATVCS_matv_audio_set_format(int val __unused)
+    virtual void ATVCS_matv_audio_set_format(int val)
     {
     }
     virtual int ATVCS_matv_audio_get_sound_system()
     {
         return 0;
     }
-    virtual int ATVCS_matv_adjust(int item __unused, int val __unused)
+    virtual int ATVCS_matv_adjust(int item, int val)
     {
         return 0;
     }
-    virtual int ATVCS_matv_get_chipdep(int item __unused)
+    virtual int ATVCS_matv_get_chipdep(int item)
     {
         return 0;
     }
-    virtual int ATVCS_matv_set_chipdep(int item __unused, int val __unused)
+    virtual int ATVCS_matv_set_chipdep(int item, int val)
     {
         return 0;
     }
     virtual void ATVCS_matv_register_callback()
     {
     }
-    virtual void registerClient(const sp<IATVCtrlClient>& client __unused)
+    virtual void registerClient(const sp<IATVCtrlClient>& client)
     {
     }
-    virtual void registerClient_FM(const sp<IATVCtrlClient>& client __unused)
+    virtual void registerClient_FM(const sp<IATVCtrlClient>& client)
     {
     }
-    virtual void CLI(char input __unused)
+    virtual void CLI(char input)
     {
     }
-    virtual int ATVCS_fm_powerup(void *parm __unused, int len __unused)
+    virtual int ATVCS_fm_powerup(void *parm, int len)
     {
         return 0;
     }
@@ -204,19 +184,19 @@ public:
     {
         return 0;
     }
-    virtual int ATVCS_fm_tune(void *parm __unused, int len __unused)
+    virtual int ATVCS_fm_tune(void *parm, int len)
     {
         return 0;
     }
-    virtual int ATVCS_fm_seek(void *parm __unused, int len __unused)
+    virtual int ATVCS_fm_seek(void *parm, int len)
     {
         return 0;
     }
-    virtual int ATVCS_fm_scan(void *parm __unused, int len __unused)
+    virtual int ATVCS_fm_scan(void *parm, int len)
     {
         return 0;
     }
-    virtual int ATVCS_fm_mute(int val __unused)
+    virtual int ATVCS_fm_mute(int val)
     {
         return 0;
     }
