@@ -19,6 +19,5 @@ LOCAL_SRC_FILES := \
 LOCAL_SHARED_LIBRARIES := libbinder libcutils libutils liblog libicuuc libui libcrypto libc libssl
 LOCAL_MODULE := libmtk_symbols
 LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 
 include $(BUILD_SHARED_LIBRARY)
