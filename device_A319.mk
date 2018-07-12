@@ -39,10 +39,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
    memtrack.mt6572
 
-# Lights
- PRODUCT_PACKAGES += \
-    lights.mt6572
-
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
