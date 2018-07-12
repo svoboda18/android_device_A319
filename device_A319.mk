@@ -33,8 +33,11 @@ PRODUCT_PACKAGES += \
     Torch
 
 PRODUCT_PACKAGES += \
-    libmtk_symbols \
-    libxlog
+    libmtk_symbols
+
+# Memtrack
+PRODUCT_PACKAGES += \
+   memtrack.mt6572
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -42,15 +45,13 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
+    audio.primary.mt6572 \
+    audio_policy.default \
     audio.a2dp.default \
     audio.usb.default \
     audio.r_submix.default \
     libaudio-resampler \
     tinymix
-
-PRODUCT_PACKAGES += \
-    audio_policy.default\
-    audio.primary.mt6572
 
 PRODUCT_PACKAGES += \
     lib_driver_cmd_mt66xx
@@ -141,6 +142,11 @@ PRODUCT_PACKAGES += \
 # FM Radio
 PRODUCT_PACKAGES += \
     FMRadio
+    libfmjni
+    
+# Substratum
+PRODUCT_PACKAGES += \
+    ThemeInterfacer
 
 # GPS
 PRODUCT_COPY_FILES += \
