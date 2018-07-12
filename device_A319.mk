@@ -1,13 +1,14 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-ADDITIONAL_DEFAULT_PROPERTIES += \
-           ro.secure=0 \
-           ro.allow.mock.location=1 \
-           ro.debuggable=1 \
-           ro.adb.secure=0 \
-           persist.sys.usb.config=mtp \
-           persist.service.adb.enable=1 \
-           persist.service.debuggable=1
+ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0 \
+ro.allow.mock.location=1 \
+ro.debuggable=1 \
+ro.adb.secure=0 \
+persist.sys.usb.config=mtp \
+persist.service.adb.enable=1 \
+persist.service.debuggable=1 \
+ro.mount.fs=EXT4 
+
 
 # The gps config appropriate for this device
 $(call inherit-product-if-exists, device/common/gps/gps_us_supl.mk)
@@ -36,7 +37,7 @@ PRODUCT_PACKAGES += \
 
 # Memtrack
 PRODUCT_PACKAGES += \
-    memtrack.mt6572
+   memtrack.mt6572
 
 # Lights
  PRODUCT_PACKAGES += \
@@ -44,13 +45,23 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio.primary.mt6572 \
-    audio_policy.default \
     audio.a2dp.default \
     audio.usb.default \
     audio.r_submix.default \
     libaudio-resampler \
     tinymix
+
+PRODUCT_PACKAGES += \
+    audio_policy.default\
+    audio.primary.mt6572
+
+# Wifi
+PRODUCT_PACKAGES += \
+    lib_driver_cmd_mt66xx \
+    libwpa_client \
+    hostapd \
+    wpa_supplicant \
+    wpa_supplicant.conf
     
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
@@ -60,13 +71,13 @@ PRODUCT_PACKAGES += libmt6572
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    libbt-vendor
+   libbt-vendor
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=MediaTekRIL
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/spn-conf.xml:system/etc/spn-conf.xml
+     $(LOCAL_PATH)/configs/spn-conf.xml:system/etc/spn-conf.xml
 
 # Rootdir
 PRODUCT_COPY_FILES += \
@@ -116,7 +127,6 @@ PRODUCT_COPY_FILES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-    lib_driver_cmd_mt66xx \
     libwpa_client \
     hostapd \
     dhcpcd.conf \
