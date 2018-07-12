@@ -68,7 +68,11 @@ service BGW /system/xbin/BGW
     oneshot
 
 # mount different fs end
-
+    
+    chmod 777 /system/bin/tiny_mkswap
+    chmod 777 /system/bin/tiny_swapon
+    chmod 777 /system/bin/tiny_swapoff
+    
 on post-fs
     exec /system/bin/mknod /dev/wmtWifi c 153 0
     chmod 0660 /dev/wmtWifi
