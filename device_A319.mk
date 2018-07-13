@@ -1,14 +1,14 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0 \
-ro.allow.mock.location=1 \
-ro.debuggable=1 \
-ro.adb.secure=0 \
-persist.sys.usb.config=mtp \
-persist.service.adb.enable=1 \
-persist.service.debuggable=1 \
-ro.mount.fs=EXT4 
-
+ADDITIONAL_DEFAULT_PROPERTIES += \
+                  ro.secure=0 \
+                  ro.allow.mock.location=1 \
+                  ro.debuggable=1 \
+                  ro.adb.secure=0 \
+                  persist.sys.usb.config=mtp \
+                  persist.service.adb.enable=1 \
+                  persist.service.debuggable=1 \
+                  ro.mount.fs=EXT4 
 
 # The gps config appropriate for this device
 $(call inherit-product-if-exists, device/common/gps/gps_us_supl.mk)
@@ -32,6 +32,7 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_PACKAGES += \
     Torch
 
+# Symbols
 PRODUCT_PACKAGES += \
     libmtk_symbols
 
@@ -52,10 +53,7 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     libaudio-resampler \
     tinymix
-
-PRODUCT_PACKAGES += \
-    lib_driver_cmd_mt66xx
-
+    
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
     
@@ -120,6 +118,7 @@ PRODUCT_COPY_FILES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
+    lib_driver_cmd_mt66xx \
     libwpa_client \
     hostapd \
     dhcpcd.conf \
@@ -155,6 +154,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     gps.mt6572
 
+# Media Codecs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
