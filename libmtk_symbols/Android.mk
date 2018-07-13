@@ -11,12 +11,13 @@ LOCAL_SRC_FILES := \
              MediaBufferGroup.cpp \
              MediaSource.cpp \
              Player.cpp \
+             mtk_omx.cpp \
              RIL.cpp \
              SSL.cpp \
              WVM.cpp \
              Xlog.cpp
 
-LOCAL_SHARED_LIBRARIES := libbinder libcutils libutils liblog libicuuc libui libcrypto libc libssl
+LOCAL_SHARED_LIBRARIES := libbinder libcutils libutils liblog libicuuc libui libcrypto libc libssl libstagefright_foundation
 LOCAL_MODULE := libmtk_symbols
 LOCAL_MODULE_TAGS := optional
 
