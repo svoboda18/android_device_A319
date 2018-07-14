@@ -6,13 +6,12 @@ LOCAL_SRC_FILES := \
              Bionic.cpp \
              EGL.cpp \
              GraphicBufferMapper.cpp \
-             Icu53.cpp \
-             Icu55.cpp \
+             Icu55.c \
              MediaBufferGroup.cpp \
              MediaSource.cpp \
              Player.cpp \
              RIL.cpp \
-             SSL.cpp \
+             SSL.c \
              WVM.cpp \
              Xlog.cpp
 
