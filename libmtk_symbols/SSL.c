@@ -25,3 +25,29 @@ void *CRYPTO_malloc(int num, const char *file, int line) {
 void CRYPTO_lock(int mode, int type, const char *file, int line) {
     ALOGD("CRYPTO_lock: mode=%d type=%d file=%s line=%d", mode, type, file, line);
 }
+
+void SSLv2_client_method() { }
+
+void ENGINE_ctrl() { }
+
+void ENGINE_ctrl_cmd() { }
+
+void UI_OpenSSL() { }
+
+void ENGINE_load_private_key() { }
+
+void OPENSSL_add_all_algorithms_noconf() { }
+
+void ENGINE_cleanup() { }
+
+void ENGINE_get_first() { }
+
+void ENGINE_get_id() { }
+
+void ENGINE_get_next() { }
+
+void ENGINE_finish() { }
+
+void ENGINE_init() { }
+
+void ENGINE_set_default() { }
