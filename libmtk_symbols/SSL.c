@@ -50,8 +50,6 @@ void ENGINE_finish() { }
 
 void ENGINE_init() { }
 
-void ENGINE_set_default() { }
+void ENGINE_set_default() { } 
 
-extern "C" { 
-    void _Z24openssl_generate_keypairPK16keymaster_device19keymaster_keypair_tPKvPPhPj() { } 
-}
+void _Z24openssl_generate_keypairPK16keymaster_device19keymaster_keypair_tPKvPPhPj() { }
