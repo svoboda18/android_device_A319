@@ -9,7 +9,8 @@ LOCAL_SRC_FILES := \
              MediaSource.cpp \
              Player.cpp \
              RIL.cpp \
-	     SSL.c \
+	     WVM.cpp \
+             SSL.c \
 	     SSL2.cpp \
              Icu51.c \
              Icu53.c \
