@@ -34,6 +34,30 @@ void ENGINE_load_private_key() { }
 
 void OPENSSL_add_all_algorithms_noconf() { }
 
+void EVP_PKEY_CTX_ctrl_uint64() { }
+void EVP_PKEY_CTX_get0_peerkey() { }
+void EVP_PKEY_CTX_get0_pkey() { }
+void EVP_PKEY_CTX_get_data() { }
+void EVP_PKEY_CTX_get_operation() { }
+void EVP_PKEY_CTX_get_signature_md() { }
+void EVP_PKEY_CTX_hex2ctrl() { }
+void EVP_PKEY_CTX_md() { }
+void EVP_PKEY_CTX_set0_keygen_info() { }
+void EVP_PKEY_CTX_set_data() { }
+void EVP_PKEY_CTX_set_mac_key() { }
+void EVP_PKEY_CTX_str2ctrl() { }
+void EVP_PKEY_assign() { }
+void EVP_PKEY_assign_POLY1305() { }
+void EVP_PKEY_assign_SIPHASH() { }
+void EVP_PKEY_decrypt_old() { }
+void EVP_PKEY_encrypt_old() { }
+void EVP_PKEY_get1_tls_encodedpoint() { }
+void EVP_PKEY_new_mac_key() { }
+void EVP_PKEY_save_parameters() { }
+void EVP_PKEY_set1_tls_encodedpoint() { }
+void EVP_PKEY_set_type() { }
+void EVP_PKEY_set_type_str() { }
+
 void ENGINE_cleanup() { }
 
 void ENGINE_get_first() { }
