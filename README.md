@@ -15,7 +15,7 @@
 | Rear Camera  | 5 MP, 480p@20f ,LED flash |
 | Front Camera  | 2 MP |
 
-#Whats Working:
+# Whats Working:
 
 | What  | Work Or Not? |
 | -------:|:------------------------- | 
