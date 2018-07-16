@@ -1,5 +1,5 @@
 # Device Tree For Lenovo A319 - 3.4.67 - MT6572 
-============================================
+
 
 | Basic   | Spec Sheet |
 | -------:|:------------------------- | 
@@ -16,7 +16,6 @@
 | Front Camera  | 2 MP |
 
 #Whats Working:
-============================================
 
 | What  | Work Or Not? |
 | -------:|:------------------------- | 
@@ -33,4 +32,16 @@
 | RIL      | Yes,Maybe ONE SIM only |
 | DataConnc| Yes |
 
-# Tree By: SaMad SegMane.
+# Tree Powered By: SaMad SegMane.
+
+# Credits:
+| -------:|
+| Aditya Kr  | 
+| Teja K |
+| tribtmen |
+| Lineage MTK |
+| fire855| 
+| ferhug | 
+| MAD |
+| AMD | 
+| Maybe More | 
