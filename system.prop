@@ -23,7 +23,7 @@ mediatek.wlan.ctia=0
 #
 wifi.tethering.interface=ap0
 #
-ro.sf.lcd_density=240
+ro.sf.lcd_density=220
 ro.opengles.version=131072
 
 ro.nfc.port=I2C
@@ -61,5 +61,261 @@ debug.hwui.render_dirty_regions=false
 persist.sys.timezone=Asia/Kolkata
 persist.sys.strictmode.visual=0
 persist.sys.strictmode.disable=1
+
+#====================#
+#== TWEAKS BY SaMad ==#
+#====================#
+
+#Faster Boot & Reboot
+ro.config.hw_quickpoweron=true
+
+#Debug Preserve Buffer
+debug.qctwa.preservebuf=1
+
+#Disable Tether Alert
+net.tethering.noprovisioning=true
+
+#MTP Mode
+persist.sys.usb.config=mtp,adb
+
+#Launcher Tweak
+ro.HOME_APP_ADJ=1
+
+#Data Tweak
+ro.ril.gprsclass=12
+ro.ril.htcmaskw1.bitmask=4294967295
+ro.ril.hsdpa.category=8
+ro.ril.hsupa.category=6
+ro.ril.hsxpa=2
+ro.ril.enable.dtm=1
+ro.ril.htcmaskw1=14449
+ro.ril.enable.3g.prefix=1
+ro.ril.enable.a53=1
+ro.ril.hep=0
+
+#Performance Tweak
+dalvik.vm.dexopt=m=y,o=v,u=y
+ro.vold.umsdirtyratio=20
+debug.performance.tuning=1
+
+#Streaming Tweak
+media.stagefright.enable-record=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-meta=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-http=true
+media.stagefright.enable-scan=true
+media.stagefright.enable-player=true
+
+#Force 3D Rendering
+hw3d.force=1
+
+#Improve Touch Responsiveness
+touch.presure.scale=0.001
+
+# GOOGLE DNS
+net.dns1=8.8.8.8
+net.dns2=8.8.4.4
+net.rmnet0.dns1=8.8.8.8
+net.rmnet0.dns2=8.8.4.4
+net.ppp0.dns1=8.8.8.8
+net.ppp0.dns2=8.8.4.4
+net.wlan0.dns1=8.8.8.8
+net.wlan0.dns2=8.8.4.4
+net.eth0.dns1=8.8.8.8
+net.eth0.dns2=8.8.4.4
+net.gprs.dns1=8.8.8.8
+net.gprs.dns2=8.8.4.4
+
+# CRT
+persist.sys.screen_off=crt
+persist.sys.screen_on=none
+# Support For IPV4 and IPV6
+persist.telephony.support.ipv6=1
+persist.telephony.support.ipv4=1
+
+# Disable Sending Usage Data
+ro.config.nocheckin=1
+
+# Firmware
+ro.mediatek.gemini_support=true
+persist.mtk.wcn.combo.chipid=-1
+drm.service.enabled=true
+ro.gemini.smart_sim_switch=false
+ro.gemini.smart_3g_switch=1
+bgw.current3gband=0
+persist.mtk.anr.mechanism=1
+sys.initd=1
+sys.initd.loop=1
+
+# RIL
+ril.first.md=1
+ril.flightmode.poweroffMD=1
+ril.telephony.mode=0
+ril.active.md=0
+ril.radiooff.poweroffMD=0
+ril.current.share_modem=2
+persist.gemini.sim_num=2
+ril.specific.sm_cause=0
+ril.external.md=0
+rild.libpath=/system/lib/mtk-ril.so
+rild.libargs=-d /dev/ttyC0
+
+# Dalvik
+dalvik.gc.type=precise 
+dalvik.vm.verify-bytecode=false
+dalvik.vm.isa.arm.features=div
+dalvik.vm.heapstartsize=5m
+dalvik.vm.heapgrowthlimit=48m
+dalvik.vm.heapsize=128m
+dalvik.vm.heapminfree=512k
+dalvik.vm.heapmaxfree=2m
+dalvik.vm.dexopt-flags=m=y
+dalvik.vm.lockprof.threshold=500
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.stack-trace-file=/data/anr/traces.txt
+dalvik.vm.mtk-stack-trace-file=/data/anr/mtk_traces.txt
+persist.sys.dalvik.vm.lib=libdvm.so
+persist.sys.dalvik.multithread=false
+persist.sys.purgeable_assets=1
+debug.kill_allocating_task=0
+dalvik.vm.checkjni=false
+dalvik.vm.dexopt-data-only=1
+dalvik.vm.execution-mode=int:jit
+dalvik.vm.jmiopts=forcecopy
+
+# GPU
+debug.sf.hw=1
+debug.egl.hw=1
+debug.egl.profiler=1
+debug.composition.type=c2d
+debug.performance.tuning=1
+video.accelerate.hw=0
+ro.config.low_ram=true
+persist.sys.force_highendgfx=true
+ro.egl.destroy_after_detach=true
+ro.opengles.version=131072
+debug.gr.numframebuffers=3
+ro.max.fling_velocity=6000
+ro.min.fling_velocity=3000
+windowsmgr.max_events_per_sec=96
+debug.hwui.render_dirty_regions=false
+ro.sf.compbypass.enable=0
+persist.android.strictmode=0
+persist.sys.use_dithering=0
+ro.opengl.off=0
+
+# AUDIO
+lpa.decode=false
+audio.decoder_override_check=true
+use.non-omx.mp3.decoder=false
+use.non-omx.aac.decoder=false
+
+# other internet tweaks
+net.tcp.buffersize.default=4096,87372,256960,4096,16384,256960
+net.tcp.buffersize.wifi=4096,87372,256960,4096,16384,256960
+net.tcp.buffersize.umts=4096,87372,256960,4096,16384,256960
+net.tcp.buffersize.gprs=4096,87372,256960,4096,16384,256960
+net.tcp.buffersize.edge=4096,87372,256960,4096,16384,256960
+net.tcp.buffersize.hspa=6144,87372,524288,6144,16384,262144
+net.tcp.buffersize.lte=524288,1048576,2097152,524288,1048576,2097152
+net.tcp.buffersize.hsdpa=6144,87372,1048576,6144,87372,1048576
+net.tcp.buffersize.evdo_b=6144,87372,1048576,6144,87372,104857
+ro.ril.sensor.sleep.control=1
+ro.ril.enable.amr.wideband=1
+ro.ril.enable.sdr=1
+ro.ril.enable.gea3=1
+ro.ril.enable.a52=0
+ro.fast.dormancy=1
+ro.ril.fast.dormancy.rule=1
+ro.ril.set.mtu1472=1
+persist.cust.tel.eons=1
+persist.radio.data_no_toggle=1
+net.rmnet0.dns1=208.67.222.222
+net.rmnet0.dns2=208.67.220.220
+net.ppp0.dns1=208.67.222.222
+net.ppp0.dns2=208.67.220.220
+net.dns1=208.67.222.222
+net.dns2=208.67.220.220
+net.ipv4.ip_no_pmtu_disc=0
+net.ipv4.route.flush=1
+net.ipv4.tcp_ecn=0
+net.ipv4.tcp_fack=1
+net.ipv4.tcp_mem=187000 187000 187000
+net.ipv4.tcp_moderate_rcvbuf=1
+net.ipv4.tcp_no_metrics_save=1
+net.ipv4.tcp_rfc1337=1
+net.ipv4.tcp_rmem=4096 39000 187000
+net.ipv4.tcp_sack=1
+net.ipv4.tcp_timestamps=1
+net.ipv4.tcp_window_scaling=1
+net.ipv4.tcp_wmem=4096 39000 187000
+
+#G-tweaks
+persist.sys.NV_FPSLIMIT=60
+persist.sys.NV_POWERMODE=1
+persist.sys.NV_PROFVER=15
+persist.sys.NV_STEREOCTRL=0
+persist.sys.NV_STEREOSEPCHG=0
+persist.sys.NV_STEREOSEP=20
+
+#BATTERY TWEAKS
+pm.sleep_mode=1
+ro.ril.power_collapse=1
+ro.mot.eri.losalert.delay=1000
+wifi.supplicant_scan_interval=172
+ro.ril.disable.power.collapse=1
+debug.gr.swapinterval=0
+
+#MORE FREE RAM
+persist.service.pcsync.enable=0 
+persist.service.lgospd.enable=0
+
+# improves audio and video recording quality
+ro.media.enc.jpeg.quality=100
+ro.media.dec.jpeg.memcap=7200000
+ro.media.enc.hprof.vid.bps=7200000
+ro.media.capture.maxres=8m
+ro.camcorder.videoModes=true
+ro.media.enc.hprof.vid.fps=65
+
+# Disables built in error reporting.
+profiler.force_disable_err_rpt=1
+profiler.force_disable_ulog=1
+
+# Screen recognizes only two fingers.
+ro.product.multi_touch_enabled=true
+ro.product.max_num_touch=2
+
+# Phone rings immediately.
+ro.telephony.call_ring.delay=0 
+ring.delay=0
+
+# Better scrolling.
+windowsmgr.max_events_per_sec=150
+ro.min_pointer_dur=8
+ro.max.fling_velocity=12000
+ro.min.fling_velocity=7200
+
+# Better signal.
+ro.config.hw_fast_dormancy=1
+
+# Disables error checking.
+ro.kernel.android.checkjni=0
+ro.kernel.checkjni=0
+
+#Screen Resolution
+debug.drm.mode.auto=1
+debug.drm.mode.force=1280x1024
+
+# MMS APN retry timer set to 2 sec( if SMS/MMS couldn`t be sent, it retries after 2 instead of 5 seconds).
+ro.gsm.2nd_data_retry_config=max/_retries=3, 2000, 2000, 2000
+
+# Disable strict mode checking.
+persist.android.strictmode=0
+
+#====================#
+#== TWEAKS BY SaMad ==#
+#====================#
 
 
