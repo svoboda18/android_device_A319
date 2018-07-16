@@ -35,6 +35,7 @@
 # Tree Powered By: SaMad SegMane.
 
 # Credits:
+| Thax U  |
 | -------:|
 | Aditya Kr  | 
 | Teja K |
