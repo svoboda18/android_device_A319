@@ -1,6 +1,6 @@
 # Device Tree For Lenovo A319 - 3.4.67 - MT6572 
-
 ============================================
+
 | Basic   | Spec Sheet |
 | -------:|:------------------------- | 
 | CPU     | Dual Core 1.3 GHz |
@@ -16,8 +16,8 @@
 | Front Camera  | 2 MP |
 
 #Whats Working:
-
 ============================================
+
 | What  | Work Or Not? |
 | -------:|:------------------------- | 
 | Camera  | Yes and SURE!! |
