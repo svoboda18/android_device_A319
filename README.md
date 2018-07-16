@@ -1,4 +1,5 @@
-# Device Tree For Lenovo A319 - 3.4.67 - MT6572 
+Device Tree For Lenovo A319 - 3.4.67 - MT6572 
+
 =====================================
 Basic   | Spec Sheet
 -------:|:-------------------------
