@@ -46,7 +46,4 @@ void ENGINE_init() { }
 
 void ENGINE_set_default() { }
 
-void _Z24openssl_generate_keypairPK16keymaster_device19keymaster_keypair_tPKvPPhPj() { }
-
-void _Z22openssl_import_keypairPK16keymaster_devicePKhjPPhPj() { }
 }
