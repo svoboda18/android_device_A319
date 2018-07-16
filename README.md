@@ -1,5 +1,6 @@
 # Device Tree For Lenovo A319 - 3.4.67 - MT6572 
 
+============================================
 | Basic   | Spec Sheet |
 | -------:|:------------------------- | 
 | CPU     | Dual Core 1.3 GHz |
@@ -13,5 +14,23 @@
 | Display | 4.5 Inch |
 | Rear Camera  | 5 MP, 480p@20f ,LED flash |
 | Front Camera  | 2 MP |
+
+#Whats Working:
+
+============================================
+| What  | Work Or Not? |
+| -------:|:------------------------- | 
+| Camera  | Yes and SURE!! |
+| Vid Rec/Enc | Yes,SW and HW. |
+| Flashlight  | Yup |
+| Audio   | Fully |
+| FM      | N/A   |
+| Storages | Yeah  |
+| Blutooth | YH    |
+| WiFi     | Always |
+| Graphics | Ey     |
+| VPN      | With Some APPS ONLY |
+| RIL      | Yes,Maybe ONE SIM only |
+| DataConnc| Yes |
 
 # Tree By: SaMad SegMane.
