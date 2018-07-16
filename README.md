@@ -1,4 +1,4 @@
-# Device Tree For Lenovo A319 - 3.4.67 - MT6592 
+# Device Tree For Lenovo A319 - 3.4.67 - MT6572 
 =====================================
 Basic   | Spec Sheet
 -------:|:-------------------------
@@ -12,6 +12,6 @@ MicroSD | Up to 32GB
 Battery | 1500 mAh
 Display | 4.5 Inch
 Rear Camera  | 5 MP, 480p@20f ,LED flash
-Front Camera | 2 MP
+Front Camera  | 2 MP
 
 # Tree By: SaMad SegMane.
