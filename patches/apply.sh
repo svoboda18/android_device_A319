@@ -15,10 +15,7 @@
 
  cd ../../frameworks/av
  patch -p1 < ../../device/Lenovo/A319/patches/android_frameworks_av.patch
-
- cd ..
- cd base
- mkdir ../../../device/Lenovo/A319/backup
+ mkdir ../../device/Lenovo/A319/backup
 
  cd ../..
  cd packages/apps/FMRadio
