@@ -152,7 +152,6 @@ index c336397..1d7e0ef 100644
 -            stopRender();
 +            if (mFmPlayer.isPlaying()) return;
 +
-+            mFmPlayer.prepareWithoutScan();
 +            mFmPlayer.start();
 +        } catch (Exception e) {
 +            Log.e(TAG, "Exception: ", e);
